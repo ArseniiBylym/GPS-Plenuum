@@ -1,0 +1,17 @@
+@import '../../../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.NavBar{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $primary;
+    padding: 10px;
+
+    .logOut{
+        margin-left: auto;
+
+    }
+}

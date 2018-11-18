@@ -12,13 +12,13 @@ class NavBar extends Component {
     render() {
         return (
             <div className='NavBar'>
-                <nav className="navbar navbar-dark bg-primary" >
-                    <Button color='disabled' onClick={this.props.logOut}>Log out</Button>
-                </nav>   
+                {/* <div className='logOut' onClick={this.props.logOut}> */}
+                    <Button color='secondary' className='logOut' onClick={this.props.logOut}>Log out</Button>
+                {/* </div> */}
             </div>
-                )
-            }
-        }
+        )
+    }
+}
         
         const mapStateToProps = state => {
             return {

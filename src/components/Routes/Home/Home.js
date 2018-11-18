@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Home.scss';
-import {Button} from 'reactstrap';
-import {connect} from 'react-redux';
-import Constants from '../../../lib/constants'
 import { Redirect } from 'react-router-dom';
 import NavBar from './NavBar/NavBar'
+import SideBar from './SideBar/SideBar';
+import Map from './Map/Map';
+import { connect } from 'react-redux';
+
 
 class Home extends Component {
     state = {
@@ -12,27 +13,29 @@ class Home extends Component {
     }
 
     render() {
-        let token = window.localStorage.getItem('token')
-        if(!token) return <Redirect to={'/login'} />
         return(
             <div className='Home'>
-            <NavBar />
-                Home Page
-               
+                    <div className='home__header'>
+                        <NavBar />
+                    </div>
+                    <div className='home__sidebar'>
+                        <SideBar />
+                    </div>
+                    <div className='home__map'>
+                        <Map />
+                    </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        authState: state.isAuth
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return {
-        logOut: () => {dispatch({type: Constants.ActionTypes.LOGOUT_SUCCESS})}
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         authState: state.isAuth.isAuthenticated
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+
+// export default connect(mapStateToProps, null)(Home);
+export default Home;
+

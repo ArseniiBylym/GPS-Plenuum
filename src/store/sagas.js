@@ -3,6 +3,7 @@ import { put, takeLatest, all } from 'redux-saga/effects'
 import Constants from '../lib/constants'
 
 export default function* rootSaga() {
+    console.log('saga is running')
    yield all([
        loginWatcher(),
    ])
@@ -11,14 +12,11 @@ export default function* rootSaga() {
 
 //authentification
 export function* loginWorker(action){
-    // yield put({type: Constants.ActionTypes.LOGIN})
-    // setTimeout(()=> {
         try {
             yield put({type: Constants.ActionTypes.LOGIN_SUCCESS})
          } catch {
              yield put({type: Constants.ActionTypes.LOGIN_FAILED})
          }
-    // },2000)
     
 }
 export function* loginWatcher() {
