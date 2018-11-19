@@ -6,7 +6,13 @@ const ActionTypes = {
     LOGOUT: "LOGOUT",
     LOGOUT_SAGA: "LOGOUT_SAGA",
     LOGOUT_SUCCESS: "LOGOUT_SUCCESS",
-    LOGOUT_FAILED: "LOGOUT_FAILED"
+    LOGOUT_FAILED: "LOGOUT_FAILED",
+
+    CAR_SHOW: "CAR_SHOW",
+    CAR_HIDE: "CAR_HIDE",
+
+    SET_MAP: "SET_MAP",
+    CLEAR_MAP: "CLEAR_MAP"
 }
 
 const Constants = ({

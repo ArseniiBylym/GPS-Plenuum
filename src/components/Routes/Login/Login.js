@@ -45,10 +45,6 @@ class Login extends Component {
             return <option key={item.value}>{item.name}</option>
 
         })
-        // let token = window.localStorage.getItem('token');
-        // let { from } = this.props.location.state || { from: { pathname: "/" } };
-
-        // if (token) return <Redirect to={from} />
         return (
             <div className='Login'>
                 <div className='container'>
