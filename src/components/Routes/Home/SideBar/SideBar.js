@@ -2,27 +2,22 @@ import React, { Component } from 'react';
 import './SideBar.scss';
 import SideBar_Objects_Top from './Objects/SideBar_Objects_Top/SideBar_Objects_Top';
 import SideBar_Objects_Bottom from './Objects/SideBar_Objects_Bottom/SideBar_Objects_Bottom'
+import SideBar_Events_Top from './Events/SideBar_Events_Top/SideBar_Events_Top'
+import SideBar_Events_Bottom from './Events/SideBar_Events_Bottom/SideBar_Events_Bottom'
 import { connect } from 'react-redux'
 
 class SideBar extends Component {
     state = {
-        activeLabel: 'objects',
-        currentCar: null
-    }
-
-    componentDidMount = () => {
-        console.log(this.state.activeLabel)
+        currentCar: null,
+        currentEvent: null
     }
 
     currentCarHandler = (index) => {
         this.setState({ currentCar: this.props.carsList[index] })
     }
 
-    changeLabeHandler = (e) => {
-        console.log(e);
-        console.log(e.target)
-        console.log(e.target.name)
-        this.setState({ activeLabel: e.target.name })
+    currentEventHandler = (index) => {
+        this.setState({currentEvent: this.props.eventsList[index]})
     }
 
     render() {
@@ -47,9 +42,12 @@ class SideBar extends Component {
                             <SideBar_Objects_Top currentCarHandler={this.currentCarHandler} />
                             <SideBar_Objects_Bottom currentCar={this.state.currentCar} />
                         </div>
-                        <div className="tab-pane " id="events" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
+                        <div className="tab-pane " id="events" role="tabpanel" aria-labelledby="profile-tab">
+                            <SideBar_Events_Top currentEventHandler={this.currentEventHandler}/>
+                            <SideBar_Events_Bottom currentEvent={this.state.currentEvent}/>
+                        </div>
                         <div className="tab-pane " id="contacts" role="tabpanel" aria-labelledby="contact-tab">contact</div>
-                        <div className="tab-pane " id="history" role="tabpanel" aria-labelledby="contact-tab">contact</div>
+                        <div className="tab-pane " id="history" role="tabpanel" aria-labelledby="contact-tab">history</div>
                     </div>
             </div>
         )
@@ -58,7 +56,8 @@ class SideBar extends Component {
 
 const mapStateToProps = state => {
     return {
-        carsList: state.allCars.cars
+        carsList: state.allCars.cars,
+        eventsList: state.allEvents.events
     }
 }
 

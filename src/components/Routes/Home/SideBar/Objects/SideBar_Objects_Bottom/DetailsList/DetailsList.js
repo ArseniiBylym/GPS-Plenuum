@@ -7,14 +7,14 @@ class DetailsList extends Component {
         let detailsItems = []
 
         for(let v in this.props.details){
-            if(v == 'Position') {
+            if(v === 'Position') {
                 detailsItems.push( 
                     <tr key={v}>
                         <td>{v}</td>
                         <td><a href='#'>{this.props.details[v].lat}°, {this.props.details[v].long}°</a></td>
                     </tr>
                 )
-            } else if(v == 'Driver Name') {
+            } else if(v === 'Driver Name') {
                 detailsItems.push( 
                     <tr key={v}>
                         <td>{v}</td>

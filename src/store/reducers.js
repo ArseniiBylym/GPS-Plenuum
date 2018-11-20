@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import Constants from '../lib/constants'
-import {carsList} from './temp_test_store'
+import {carsList, eventsList} from './temp_test_store'
 
 const isAuth = (state = {isAuthenticated: false, inProgress: false}, action) => {
     switch (action.type) {
@@ -73,10 +73,20 @@ const allCars = (state = {...carsList}, action) => {
     }
 }
 
+const allEvents = (state = {...eventsList}, action) => {
+    switch (action.type) {
+        case Constants.ActionTypes.ADD_EVENT:
+            return state.concat(action.event);
+        default: 
+            return state;
+    }
+}
+
 const reducers = combineReducers({
     isAuth,
     allCars,
-    mainMap
+    mainMap,
+    allEvents,
 })
 
 export default reducers;

@@ -76,3 +76,58 @@ export const carsList = {
     }
 ]
 }
+
+export const eventsList = {
+    events: [
+        {
+            _id: Math.random() + new Date(),
+            time: +new Date(),
+            object: 'Car',
+            type: 'Overspeed',
+            details: {
+                address: 'A67, 5928 Venlo, Netherlands',
+                ['Position']: {
+                    lat: 51,
+                    long: 6,
+                },
+                altitude: '20 m',
+                angle: '89',
+                speed: '129 kph',
+            }
+        },
+        {
+            _id: Math.random() + new Date(),
+            time: +new Date(),
+            object: 'Bus',
+            type: 'Zone out',
+            details: {
+                address: 'A67, 5928 Venlo, Netherlands',
+                ['Position']: {
+                    lat: 50,
+                    long: 5,
+                },
+                altitude: '13 m',
+                angle: '70',
+                speed: '80 kph',
+            }
+        },
+        {
+            _id: Math.random() + new Date(),
+            time: +new Date(),
+            object: 'Bus',
+            type: 'Zone in',
+            details: {
+                address: 'A67, 5928 Venlo, Netherlands',
+                ['Position']: {
+                    lat: 50,
+                    long: 5,
+                },
+                altitude: '50 m',
+                angle: '50',
+                speed: '50 kph',
+            }
+        }
+        
+    ]
+
+}

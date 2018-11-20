@@ -9,23 +9,21 @@ class SideBar_Top extends Component {
         
     }
     componentDidMount = () => {
-        console.log('from Sidebartop update')
     }
 
     render() {
-        console.log(this.props.carsList)
 
         let cars = null
         console.log(this.props.carsList.length)
         if(this.props.carsList.length > 0) {
             cars = this.props.carsList.map((item, i) => {
                 console.log(item.isVisible)
-                return <CarItem isVisible={item.isVisible} car={item} index={i} selectCar={this.props.currentCarHandler}/>
+                return <CarItem key={item.details['Engine ID']} isVisible={item.isVisible} car={item} index={i} selectCar={this.props.currentCarHandler}/>
             })
         }
 
         return(
-            <div className='SideBar_Top'>
+            <div className='SideBar_Objects_Top'>
                 <Table bordered hover >
                     <thead>
                         <tr>

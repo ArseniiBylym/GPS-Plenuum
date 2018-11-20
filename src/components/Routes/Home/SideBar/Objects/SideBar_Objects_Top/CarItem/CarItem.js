@@ -13,8 +13,6 @@ class CarItem extends Component {
     }
 
     carVisibilityHandler = () => {
-        console.log(this.props.index)
-        console.log(this.props.car.isVisible)
         if(this.props.car.isVisible) {
             this.props.hideCar(this.props.index)
         } else {
@@ -24,11 +22,10 @@ class CarItem extends Component {
    
 
     render() {
-        console.log(this.props)
         const {name, icon_url, date, speed, engineState, connectionState} = this.props.car
         return(
                 <tr className='CarItem' onClick={this.selectCurrentCar}>
-                    <td><input type='checkbox' checked={this.props.isVisible} onClick={this.carVisibilityHandler}></input></td>
+                    <td><input type='checkbox' checked={this.props.isVisible} onChange={this.carVisibilityHandler}></input></td>
                     <td><input type='checkbox'></input></td>
                     <td><img src={icon_url} ></img></td>
                     <td>{name}</td>

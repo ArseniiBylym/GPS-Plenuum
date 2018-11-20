@@ -3,7 +3,7 @@ import './SideBar_Objects_Bottom.scss';
 import { Table } from 'reactstrap'
 import DetailsList from './DetailsList/DetailsList';
 
-class SideBar_Bottom extends Component {
+class SideBar_Objects_Bottom extends Component {
     state = {
         
     }
@@ -11,7 +11,7 @@ class SideBar_Bottom extends Component {
     render() {
         console.log(this.props)
         return(
-            <div className='SideBar_Bottom'>
+            <div className='SideBar_Objects_Bottom'>
                 <Table bordered hover >
                     <thead>
                         <tr>
@@ -26,4 +26,4 @@ class SideBar_Bottom extends Component {
     }
 }
 
-export default SideBar_Bottom
+export default SideBar_Objects_Bottom
