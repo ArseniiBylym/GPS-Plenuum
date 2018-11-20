@@ -1,6 +1,39 @@
+
 .CarItem{
     img{
         width: 20px;
         height: 20px;
+    }
+    .info-container{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        .info-container-item{
+            margin-left: 3px;
+        }
+
+        .info-container--name{
+            margin-right: auto;
+        }
+        .info-container--engine{
+            width: 20px;
+            height: 20px;
+            background: url('../../../../../../../lib/img/engine-on.svg') left top/ 100% 100% no-repeat;
+
+            &.off{
+                background: url('../../../../../../../lib/img/engine-off.svg') left top/ 100% 100% no-repeat;
+            }
+        }
+        .info-container--connection{
+            width: 20px;
+            height: 20px;
+            background: url('../../../../../../../lib/img/connection-on.svg') left top/ 100% 100% no-repeat;
+
+            &.off{
+                background: url('../../../../../../../lib/img/connection-off.svg') left top/ 100% 100% no-repeat;
+            }
+        }
     }
 }

@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import './Home.scss';
-import { Redirect } from 'react-router-dom';
+
 import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar';
 import MainMap from './MainMap/MainMap';
-import { connect } from 'react-redux';
 
 
 class Home extends Component {
-    state = {
-        
-    }
+    state = {}
 
     render() {
         return(
@@ -28,14 +25,5 @@ class Home extends Component {
         )
     }
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         authState: state.isAuth.isAuthenticated
-//     }
-// }
-
-
-// export default connect(mapStateToProps, null)(Home);
 export default Home;
 

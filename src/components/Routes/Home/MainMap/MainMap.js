@@ -9,7 +9,7 @@ import { token } from '../../../../config/leaflet.config'
 import IconsCreator from '../../../Helpers/IconCreator/IconsCreator'
 
 const { BaseLayer, Overlay } = LayersControl
-const MapContext = React.createContext()
+
 
 class MainMap extends Component {
     state = {}
@@ -29,7 +29,7 @@ class MainMap extends Component {
         }
 
         return (
-            <MapContext.Provider map={this.mapRef.current}>
+           
                 <Map ref={this.mapRef} className='MainMap' center={position} zoom={12}>
                     <LayersControl position="topright">
                         <BaseLayer checked name="OpenStreetMap.Mapnik">
@@ -59,7 +59,7 @@ class MainMap extends Component {
                         {carsIcons}
                     </LayersControl>
                 </Map>
-            </MapContext.Provider>
+           
         )
     }
 }

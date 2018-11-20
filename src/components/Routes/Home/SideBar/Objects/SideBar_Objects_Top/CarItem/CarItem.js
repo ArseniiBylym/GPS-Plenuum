@@ -9,6 +9,7 @@ class CarItem extends Component {
     }
 
     selectCurrentCar = () => {
+        console.log(this.context)
         this.props.selectCar(this.props.index)
     }
 
@@ -28,7 +29,15 @@ class CarItem extends Component {
                     <td><input type='checkbox' checked={this.props.isVisible} onChange={this.carVisibilityHandler}></input></td>
                     <td><input type='checkbox'></input></td>
                     <td><img src={icon_url} ></img></td>
-                    <td>{name}</td>
+                    <td>
+                        <div className='info-container'>
+                            <div className="info-container-item info-container--name">{name}</div>
+                            <div className="info-container-item info-container--speed">{speed}kph</div>
+                            <div className={engineState ? "info-container-item info-container--engine" : "info-container-item info-container--engine off"}></div>
+                            <div className={connectionState ? "info-container-item info-container--connection" : "info-container-item info-container--connection off"}></div>
+                            <div className="info-container-item info-container--action-link"><img src="https://s1.gps-server.net/theme/images/menu.svg"/></div>
+                        </div>
+                    </td>
                 </tr>
         )
     }

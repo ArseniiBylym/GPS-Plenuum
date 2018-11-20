@@ -13,8 +13,8 @@ export const carsList = {
             lat: 51,
             long: 10
         },
-        engineState: true,
-        connectionState: true,
+        engineState: false,
+        connectionState: false,
         details: {
             ['Altitude']: 119,
             ['Angle']: 158,
