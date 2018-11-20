@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SideBar_Bottom.scss';
+import './SideBar_Objects_Bottom.scss';
 import { Table } from 'reactstrap'
 import DetailsList from './DetailsList/DetailsList';
 

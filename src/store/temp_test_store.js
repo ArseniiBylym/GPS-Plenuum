@@ -28,8 +28,8 @@ export const carsList = {
             ['Odometer']: '3754568 km',
             ['Plate']: 'PLA987',
             ['Position']: {
-                lat: '51.48258176623268', 
-                long: '-0.21393631536935412',
+                lat: 51.48258176623268, 
+                long: -0.21393631536935412,
             },
             ['Status']:	'Stopped 3 s',
             ['Time (position)']:	+new Date(),
@@ -65,8 +65,8 @@ export const carsList = {
             ['Odometer']: '3754568 km',
             ['Plate']: 'PLA987',
             ['Position']: {
-                lat: '51.54332609041597', 
-                long: '-0.07614621427870284',
+                lat: 51.54332609041597, 
+                long: -0.07614621427870284,
             },
             ['Status']:	'Stopped 3 s',
             ['Time (position)']:	+new Date(),

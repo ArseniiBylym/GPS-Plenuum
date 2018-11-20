@@ -1,0 +1,12 @@
+.popupContainer {
+    .popupContainer__main{
+        td{
+            padding: 3px;
+            width: 50%;
+        }
+    }
+    .popupContainer__details{
+       display: flex;
+       justify-content: flex-end;
+    }
+}

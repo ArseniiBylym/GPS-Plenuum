@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './CarItem.scss';
 import { connect } from 'react-redux'
-import Constants from '../../../../../../lib/constants'
+import Constants from '../../../../../../../lib/constants'
 
 class CarItem extends Component {
     state = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SideBar_Top.scss';
+import './SideBar_Objects_Top.scss';
 import { Table } from 'reactstrap';
 import { connect } from 'react-redux'
 import CarItem from './CarItem/CarItem'

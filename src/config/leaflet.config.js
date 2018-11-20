@@ -30,3 +30,5 @@ export const mapInitial = (id) => {
     L.control.layers(baseMaps).addTo(map);
 
 }
+
+export const token = 'pk.eyJ1IjoiYXJzZW5paWJ5bHltIiwiYSI6ImNqb2xydjNwNTBqYXkzcXRvcjhpOGg1Y2gifQ.hTM0UIP1Yqf3scFUH68MUg'

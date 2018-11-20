@@ -3,7 +3,7 @@ import './Home.scss';
 import { Redirect } from 'react-router-dom';
 import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar';
-import Map from './Map/Map';
+import MainMap from './MainMap/MainMap';
 import { connect } from 'react-redux';
 
 
@@ -22,7 +22,7 @@ class Home extends Component {
                         <SideBar />
                     </div>
                     <div className='home__map'>
-                        <Map />
+                        <MainMap />
                     </div>
             </div>
         )

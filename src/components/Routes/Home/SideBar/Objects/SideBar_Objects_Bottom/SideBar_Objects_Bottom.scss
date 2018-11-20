@@ -1,16 +1,22 @@
-.SideBar_Top{
+.SideBar_Bottom{
     width: 100%;
     // background-color: gray;
-    flex: 0 0 300px;
+    flex-grow: 1;
     overflow-y: auto;
-    border-top: 2px solid gray;
+    // border-top: 2px solid gray;
+
 
     .table{
+        position: relative;
+
+        thead{
+            position: sticky;
+        }
         
         th,
         td{
             font-size: 12px;
-            font-weight: 400;
+            font-weight: 400px;
             padding: 5px;
         }
 
