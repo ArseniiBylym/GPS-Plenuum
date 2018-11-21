@@ -35,7 +35,7 @@ const mainMap = (state={map: null}, action) => {
     switch (action.type) {
         case Constants.ActionTypes.SET_MAP:
             return {
-                map: action.map
+                map: action.elem
             }
         case Constants.ActionTypes.SET_MAP:{
             return{

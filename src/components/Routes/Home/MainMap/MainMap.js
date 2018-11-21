@@ -13,7 +13,16 @@ const { BaseLayer, Overlay } = LayersControl
 
 class MainMap extends Component {
     state = {}
-    mapRef = React.createRef()
+
+
+    componentDidMount() {
+        const leafletMap = this.leafletMap.leafletElement;
+        console.log(leafletMap)
+        // leafletMap.on('zoomend', () => {
+        //     console.log('Current zoom level -> ', leafletMap.getZoom());
+        // });
+        this.props.setMap(leafletMap)
+    }
 
     render() {
         const position = [51.505, -0.09]
@@ -29,8 +38,12 @@ class MainMap extends Component {
         }
 
         return (
-           
-                <Map ref={this.mapRef} className='MainMap' center={position} zoom={12}>
+                <Map 
+                    ref={m => { this.leafletMap = m; }}
+                    className='MainMap' 
+                    center={position} 
+                    zoom={12}
+                >
                     <LayersControl position="topright">
                         <BaseLayer checked name="OpenStreetMap.Mapnik">
                             <TileLayer
@@ -59,7 +72,6 @@ class MainMap extends Component {
                         {carsIcons}
                     </LayersControl>
                 </Map>
-           
         )
     }
 }
@@ -74,7 +86,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // setMap: (elem) => { dispatch({ type: Constants.ActionTypes.SET_MAP, elem: elem }) }
+        setMap: (elem) => { dispatch({ type: Constants.ActionTypes.SET_MAP, elem: elem }) }
     }
 }
 

@@ -9,7 +9,9 @@ class CarItem extends Component {
     }
 
     selectCurrentCar = () => {
-        console.log(this.context)
+        const map = this.props.mainMap;
+        console.log(map.getZoom())
+        map.setView({lat: this.props.car.details.Position.lat, lng: this.props.car.details.Position.long}, 12)
         this.props.selectCar(this.props.index)
     }
 
@@ -43,6 +45,13 @@ class CarItem extends Component {
     }
 }
 
+
+const mapStateToProps = state => {
+    return {
+        mainMap: state.mainMap.map
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         hideCar: (index) => {dispatch({type: Constants.ActionTypes.CAR_HIDE, index: index})},
@@ -50,4 +59,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CarItem)
+export default connect(mapStateToProps, mapDispatchToProps)(CarItem)
