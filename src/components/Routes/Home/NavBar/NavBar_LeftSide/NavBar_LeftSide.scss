@@ -1,0 +1,54 @@
+.NavBar__left{
+    height: 100%;
+    text-align: center;
+
+    .nav-item{
+        padding: 7px 2px;
+        cursor:pointer;
+        &:hover{
+            background-color: rgba(0,0,0,.1);
+        }
+    }
+    .nav-link{
+        width: 100%;
+        height: 100%;
+
+    }
+
+    #MainNavs__about{
+        background: url('../../../../../lib/img/logo_small.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__help{
+        background: url('../../../../../lib/img/info.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__settings{
+        background: url('../../../../../lib/img/settings.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__showPoint{
+        background: url('../../../../../lib/img/marker.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__adressSearch{
+        background: url('../../../../../lib/img/search.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__reports{
+        background: url('../../../../../lib/img/report.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__tasks{
+        background: url('../../../../../lib/img/tasks.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__RFID{
+        background: url('../../../../../lib/img/logbook.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__DTC{
+        background: url('../../../../../lib/img/dtc.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__objectControl{
+        background: url('../../../../../lib/img/cmd.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__imageGallery{
+        background: url('../../../../../lib/img/gallery.svg') center center/ 100% 100% no-repeat;
+    }
+    #MainNavs__chat{
+        background: url('../../../../../lib/img/chat.svg') center center/ 100% 100% no-repeat;
+    }
+}

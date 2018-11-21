@@ -1,0 +1,12 @@
+.BillingButton-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .icon{
+        width: 1rem;
+        height: 1rem;
+        background: url('../../../../../../lib/img/cart-white.svg') center center/ 70% 70% no-repeat;
+    }
+}

@@ -131,3 +131,32 @@ export const eventsList = {
     ]
 
 }
+
+export const zonesList = {
+    zones: [
+        {
+            _id: Math.random() + new Date(),
+            name: 'Coventry',
+            cords: [
+                [51.509, -0.08],
+                [51.503, -0.06],
+                [51.51, -0.047]
+            ],
+            color: 'red',
+            fillColor: '#f03',
+            isVisible: true
+        },
+        {
+            _id: Math.random() + new Date(),
+            name: 'Manchester',
+            cords: [
+                [52.509, -0.08],
+                [52.503, -0.06],
+                [52.51, -0.047]
+            ],
+            color: 'red',
+            fillColor: '#f03',
+            isVisible: true
+        }
+    ]
+}

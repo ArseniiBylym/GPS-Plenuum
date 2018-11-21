@@ -1,0 +1,62 @@
+.Places_Header {
+    width: 100%;
+    display: flex; 
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+
+    .Places_Header__input-addon{
+        font-size: 12px;
+        height: 2rem;
+        width: 2rem;
+
+        img{
+            width: 2rem;
+            height: 2rem;
+            padding: 8px;
+            background-color: rgba(0,0,0,.1);
+            border-radius: 3px 0 0 3px;
+        }
+    }
+
+    input{
+        font-size: 12px;
+        height: 2rem;
+    }
+    
+    button{
+        margin: 0 2px;
+        height: 1.5rem;
+        border: 1px solid rgba(0,0,0,.1);
+
+        &:hover{
+            background-color:  rgba(0,0,0,.1);
+            border-color: rgba(0,0,0,.1);
+        }
+    }
+    .Places_Header__reload-icon{
+        background: url('../../../../../../lib/img/refresh-color.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__marker-icon{
+        background: url('../../../../../../lib/img/marker-add.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__groups-icon{
+        background: url('../../../../../../lib/img/groups.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__import-icon{
+        background: url('../../../../../../lib/img/import.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__export-icon{
+        background: url('../../../../../../lib/img/export.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__delete-icon{
+        background: url('../../../../../../lib/img/remove2.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__route-icon {
+        background: url('../../../../../../lib/img/route-add.svg') center center/ 100% 100% no-repeat;
+    }
+    .Places_Header__zone-icon{
+        background: url('../../../../../../lib/img/zone-add.svg') center center/ 100% 100% no-repeat;
+    }
+}

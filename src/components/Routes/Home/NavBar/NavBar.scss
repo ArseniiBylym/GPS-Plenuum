@@ -6,12 +6,13 @@
     height: 100%;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: flex-start;
-    background-color: $primary;
+    justify-content: space-between;
+    // background-color: $primary;
     padding: 10px;
 
-    .logOut{
-        margin-left: auto;
-
+    .btn,
+    select{
+        font-size: 12px;
     }
+
 }

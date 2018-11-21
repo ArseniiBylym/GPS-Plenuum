@@ -27,8 +27,8 @@ class SideBar_Top extends Component {
                 <Table bordered hover >
                     <thead>
                         <tr>
-                            <th style={{width: '10%'}}>#</th>
-                            <th style={{width: '10%'}}>@</th>
+                            <th className='SideBar_Objects_Top__visible' style={{width: '10%'}}></th>
+                            <th className='SideBar_Objects_Top__follow' style={{width: '10%'}}></th>
                             <th style={{width: '10%'}}></th>
                             <th style={{width: '70%'}}>Object</th>
                         </tr>

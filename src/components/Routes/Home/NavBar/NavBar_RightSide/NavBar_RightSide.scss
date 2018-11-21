@@ -1,0 +1,23 @@
+.NavBar__right{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    & > div,
+    & > select {
+        margin: 0 5px;
+    }
+
+    select{
+        padding: 0 5px;
+        height: 2rem;
+    }
+
+    .logOut{
+        // margin-left: auto;
+        height: 2rem;
+        background: url('../../../../../lib/img/logout.svg') center center/ 80% 80% no-repeat;
+        background-color: gray;
+    }
+}

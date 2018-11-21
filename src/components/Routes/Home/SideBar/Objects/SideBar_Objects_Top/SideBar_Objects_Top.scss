@@ -6,5 +6,21 @@
     // border-top: 2px solid gray;
     padding-top: 5px;
 
+    .table{
+        // td{
+        //     display: flex;
+        //     flex-flow: row nowrap;
+        //     align-items: center;
+        //     justify-content: center;
+        // }
+        
+        .SideBar_Objects_Top__visible{
+            background: url('../../../../../../lib/img/eye.svg') center center/ 60% 60% no-repeat;
+        }
+        .SideBar_Objects_Top__follow{
+            background: url('../../../../../../lib/img/follow.svg') center center/ 60% 60% no-repeat;
+        }
+        
+    }
   
 }
