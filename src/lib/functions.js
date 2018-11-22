@@ -1,3 +1,5 @@
+import L from 'leaflet'
+
 export const findZoneCenter = (pointsArr) => {
     console.log(pointsArr)
     let lat = null;
@@ -16,4 +18,26 @@ export const findZoneCenter = (pointsArr) => {
     }
     
     return point
+}
+
+export const createEventPopup = (event, map) => {
+    
+    L.popup()
+        .setLatLng(event.details.Position)
+        .setContent(`
+            <div className="popupContainer">
+                <div className="popupContainer__main">
+                    <table borderless size='sm'>
+                        <tbody>
+                            <tr><td>Object</td><td>${event.object}</td></tr>
+                            <tr><td>Event</td><td>${event.type}</td></tr>
+                            <tr><td>Altitude</td><td>${event.details.altitude}</td></tr>
+                            <tr><td>Speed</td><td>${event.details.speed}</td></tr>
+                            <tr><td>Address</td><td>${event.details.address}</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>`
+        )
+        .openOn(map);
 }

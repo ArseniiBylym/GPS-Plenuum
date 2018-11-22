@@ -15,7 +15,7 @@ class NavBar_RightSide extends Component {
                 <Input type="select" name="select" id="exampleSelect">
                     <option>English</option>
                     <option>Arabic</option>
-                    <option>Ukrain</option>
+                    <option>Ukrainian</option>
                 </Input>
                 <BillingButton />
                 <UserProfileButton />
