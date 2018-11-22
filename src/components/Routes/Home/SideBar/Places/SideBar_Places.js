@@ -46,8 +46,8 @@ class SideBar_Places extends Component {
                             <tr>
                                 <th className='SideBar_Places-table__visible' style={{ width: '10%' }}></th>
                                 <th style={{ width: '10%' }}></th>
-                                <th style={{ width: '70%' }}>Name</th>
-                                <th style={{ width: '10%' }}></th>
+                                <th style={{ width: '65%' }}>Name</th>
+                                <th style={{ width: '15%' }}></th>
                             </tr>
                         </thead>
                         <tbody className="tab-content SideBar_Places-table-content" id="SideBar_Places-table-content">

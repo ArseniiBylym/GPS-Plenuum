@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 import './Zones_Table.scss';
 import { connect } from 'react-redux'
+import Constants from '../../../../../../../lib/constants'
+import Zones_Table_Item from './Zones_Table_Item'
 
 class Zones_Table extends Component {
 
     render() {
 
         const zonesItems = this.props.zones.map((item, i) => {
-            return (
-                <tr key={item._id} className='Zone_table__item'>
-                    <td><input type='checkbox' checked={item.isVisible}></input></td>
-                    <td className='Zone_table__item--color'>
-                        <div className="Zone_table__item--marker" style={{backgroundColor: item.fillColor}}></div>
-                    </td>
-                    <td>{item.name}</td>
-                    <td>
-                        <div className="Zone_table__item--edit"></div>
-                        <div className="Zone_table__item--delete"></div>
-                    </td>
-                </tr>
-            )
+            return <Zones_Table_Item key={item._id} zone={item} index={i} isVisible={item.isVisible}/>
         })
-        console.log(this.props.zones)
+
         return(
             <React.Fragment>
                 {zonesItems}
@@ -35,5 +25,6 @@ const mapStateToProps = state => {
         zones: state.allZones.zones
     }
 }
+
 
 export default connect(mapStateToProps, null)(Zones_Table)

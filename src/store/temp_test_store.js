@@ -7,11 +7,11 @@ export const carsList = {
         speed: 100,
         current_position: {
             lat: 52,
-            long: 11
+            lng: 11
         },
         last_position: {
             lat: 51,
-            long: 10
+            lng: 10
         },
         engineState: false,
         connectionState: false,
@@ -28,8 +28,8 @@ export const carsList = {
             ['Odometer']: '3754568 km',
             ['Plate']: 'PLA987',
             ['Position']: {
-                lat: 51.48258176623268, 
-                long: -0.21393631536935412,
+                lat: 51.4825, 
+                lng: -0.2139,
             },
             ['Status']:	'Stopped 3 s',
             ['Time (position)']:	+new Date(),
@@ -44,11 +44,11 @@ export const carsList = {
         speed: 80,
         current_position: {
             lat: 55,
-            long: 13
+            lng: 13
         },
         last_position: {
             lat: 56,
-            long: 14
+            lng: 14
         },
         engineState: true,
         connectionState: true,
@@ -65,8 +65,8 @@ export const carsList = {
             ['Odometer']: '3754568 km',
             ['Plate']: 'PLA987',
             ['Position']: {
-                lat: 51.54332609041597, 
-                long: -0.07614621427870284,
+                lat: 51.5433, 
+                lng: -0.0761,
             },
             ['Status']:	'Stopped 3 s',
             ['Time (position)']:	+new Date(),
@@ -88,7 +88,7 @@ export const eventsList = {
                 address: 'A67, 5928 Venlo, Netherlands',
                 ['Position']: {
                     lat: 51,
-                    long: 6,
+                    lng: 6,
                 },
                 altitude: '20 m',
                 angle: '89',
@@ -104,7 +104,7 @@ export const eventsList = {
                 address: 'A67, 5928 Venlo, Netherlands',
                 ['Position']: {
                     lat: 50,
-                    long: 5,
+                    lng: 5,
                 },
                 altitude: '13 m',
                 angle: '70',
@@ -120,7 +120,7 @@ export const eventsList = {
                 address: 'A67, 5928 Venlo, Netherlands',
                 ['Position']: {
                     lat: 50,
-                    long: 5,
+                    lng: 5,
                 },
                 altitude: '50 m',
                 angle: '50',
@@ -137,7 +137,7 @@ export const zonesList = {
         {
             _id: Math.random() + new Date(),
             name: 'Coventry',
-            cords: [
+            coords: [
                 [51.509, -0.08],
                 [51.503, -0.06],
                 [51.51, -0.047]
@@ -149,12 +149,12 @@ export const zonesList = {
         {
             _id: Math.random() + new Date(),
             name: 'Manchester',
-            cords: [
-                [52.509, -0.08],
-                [52.503, -0.06],
-                [52.51, -0.047]
+            coords: [
+                [51.5584, -0.1895],
+                [51.5459, -0.1140],
+                [51.5243, -0.2160]
             ],
-            color: 'red',
+            color: 'green',
             fillColor: '#f03',
             isVisible: true
         }

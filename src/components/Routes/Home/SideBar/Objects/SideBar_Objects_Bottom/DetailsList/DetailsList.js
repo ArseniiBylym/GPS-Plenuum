@@ -11,7 +11,11 @@ class DetailsList extends Component {
                 detailsItems.push( 
                     <tr key={v}>
                         <td>{v}</td>
-                        <td><a href='#'>{this.props.details[v].lat}°, {this.props.details[v].long}°</a></td>
+                        <td><a target='_blank' 
+                                href={`https://www.google.com/maps?q=${this.props.details[v].lat},${this.props.details[v].lng}&t=m`}
+                            >
+                            {this.props.details[v].lat}°, {this.props.details[v].lng}°
+                            </a></td>
                     </tr>
                 )
             } else if(v === 'Driver Name') {

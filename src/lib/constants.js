@@ -11,8 +11,13 @@ const ActionTypes = {
     CAR_SHOW: "CAR_SHOW",
     CAR_HIDE: "CAR_HIDE",
 
+    ZONE_SHOW: "ZONE_SHOW",
+    ZONE_HIDE: "ZONE_HIDE",
+
     SET_MAP: "SET_MAP",
-    CLEAR_MAP: "CLEAR_MAP"
+    CLEAR_MAP: "CLEAR_MAP",
+
+
 }
 
 const Constants = ({

@@ -2,10 +2,10 @@ import React from 'react';
 import L from 'leaflet';
 import {Marker, Popup} from 'react-leaflet';
 import {Table} from 'reactstrap';
-import './IconsCreator.scss'
+import './IconCreator.scss'
 
 
-function IconsCreator(props) {
+function IconCreator(props) {
     const { car } = props;
     const { details } = car
 
@@ -17,14 +17,15 @@ function IconsCreator(props) {
     });
 
     return (
-        <Marker position={[details.Position.lat, details.Position.long]} icon={icon}>
+        <Marker position={[details.Position.lat, details.Position.lng]} icon={icon}>
             <Popup>
                 <div className="popupContainer">
                     <div className="popupContainer__main">
                         <Table borderless size='sm'>
                             <tbody>
                                 <tr><td>Object</td><td>{car.name}</td></tr>
-                                <tr><td>Position</td><td><a href='#'>{details.Position.lat}°, {details.Position.long}°</a></td></tr>
+                                <tr><td>Position</td><td><a target='_blank' 
+                                    href={`https://www.google.com/maps?q=${details.Position.lat}, ${details.Position.lng}&t=m`}>{details.Position.lat}°, {details.Position.lng}°</a></td></tr>
                                 <tr><td>Altitude</td><td>{details.Altitude}</td></tr>
                                 <tr><td>Speed</td><td>{car.speed}</td></tr>
                                 <tr><td>Time</td><td>{details['Time (position)']}</td></tr>
@@ -40,4 +41,4 @@ function IconsCreator(props) {
     )
 }
 
-export default IconsCreator
+export default IconCreator

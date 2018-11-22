@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { mapInitial } from '../../../../config/leaflet.config'
 import L from 'leaflet';
 import Constants from '../../../../lib/constants';
-import { Map, TileLayer, Marker, Popup, LayerGroup, LayersControl } from 'react-leaflet'
+import { Map, TileLayer, Polygon, Marker, Popup, LayerGroup, LayersControl } from 'react-leaflet'
 import { token } from '../../../../config/leaflet.config'
-import IconsCreator from '../../../Helpers/IconCreator/IconsCreator'
+import IconCreator from '../../../Helpers/IconCreator/IconCreator'
+import ZoneCreator from '../../../Helpers/ZoneCreator/ZoneCreator'
 
 const { BaseLayer, Overlay } = LayersControl
 
@@ -18,9 +19,9 @@ class MainMap extends Component {
     componentDidMount() {
         const leafletMap = this.leafletMap.leafletElement;
         console.log(leafletMap)
-        // leafletMap.on('zoomend', () => {
-        //     console.log('Current zoom level -> ', leafletMap.getZoom());
-        // });
+        leafletMap.on('click', (e) => {
+            console.log('Current position -> ', e.latlng);
+        });
         this.props.setMap(leafletMap)
     }
 
@@ -33,8 +34,19 @@ class MainMap extends Component {
                 return item.isVisible === true
             })
             carsIcons = visibleCars.map((item, i) => {
-                return <IconsCreator key={item.name} index={i} car={item} />
+                return <IconCreator key={item.name} index={i} car={item} />
             })
+        }
+        let zones = null;
+        if(this.props.zonesList.length > 0) {
+            const visibleZones = this.props.zonesList.filter((item, i) => {
+                return item.isVisible === true
+            })
+            // zones = visibleZones.map((item, i) => {
+            //     console.log(item)
+            //     return <Polygon color={item.color} positions={item.coords} />
+            // })
+            zones = <ZoneCreator items={visibleZones} />
         }
 
         return (
@@ -70,6 +82,8 @@ class MainMap extends Component {
                             />
                         </BaseLayer>
                         {carsIcons}
+                        {zones}
+                        {/* <Polygon color="purple" positions={[[51.515, -0.09], [51.52, -0.1], [51.52, -0.12]]} /> */}
                     </LayersControl>
                 </Map>
         )
@@ -80,7 +94,8 @@ class MainMap extends Component {
 const mapStateToProps = state => {
     return {
         carsList: state.allCars.cars,
-        currentMap: state.mainMap.map
+        currentMap: state.mainMap.map,
+        zonesList: state.allZones.zones
     }
 }
 

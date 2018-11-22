@@ -84,6 +84,25 @@ const allEvents = (state = {...eventsList}, action) => {
 
 const allZones = (state = {...zonesList}, action) => {
     switch (action.type) {
+
+        case Constants.ActionTypes.ZONE_SHOW:
+            let newZonesArrHidden = state.zones.slice()
+            newZonesArrHidden[action.index].isVisible = true;
+
+            return {
+                ...state,
+                zones: newZonesArrHidden
+            }
+        case Constants.ActionTypes.ZONE_HIDE:
+
+            let newZonesArrVisible = state.zones.slice()
+            newZonesArrVisible[action.index].isVisible = false;
+
+            return {
+                ...state,
+                zones: newZonesArrVisible
+            }
+
         default: 
             return state
     }
