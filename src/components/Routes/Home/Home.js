@@ -5,6 +5,8 @@ import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar';
 import MainMap from './MainMap/MainMap';
 
+import Windows from './Windows/Windows'
+
 
 class Home extends Component {
     state = {}
@@ -21,6 +23,7 @@ class Home extends Component {
                     <div className='home__map'>
                         <MainMap />
                     </div>
+                    <Windows />
             </div>
         )
     }

@@ -1,0 +1,29 @@
+.About{
+    // width: 100%;
+    // height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0,0,0,.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .About-conteiner{
+        width: 50%;
+        height: 200px;
+
+        .About-container__header{
+            width: 100%;
+            height: 80px;
+            background-color: #3180cd;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

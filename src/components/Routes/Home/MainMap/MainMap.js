@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './MainMap.scss';
 import { connect } from 'react-redux';
 import { mapInitial } from '../../../../config/leaflet.config'
@@ -55,31 +55,31 @@ class MainMap extends Component {
                     className='MainMap' 
                     center={position} 
                     zoom={12}
-                >
+                    >
                     <LayersControl position="topright">
                         <BaseLayer checked name="OpenStreetMap.Mapnik">
                             <TileLayer
                                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
+                                />
                         </BaseLayer>
                         <BaseLayer name="OpenStreetMap.BlackAndWhite">
                             <TileLayer
                                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
-                            />
+                                />
                         </BaseLayer>
                         <BaseLayer name="Satelite">
                             <TileLayer
                                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url={`https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=${token}`}
-                            />
+                                />
                         </BaseLayer>
                         <BaseLayer name="Dark">
                             <TileLayer
                                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url={`https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=${token}`}
-                            />
+                                />
                         </BaseLayer>
                         {carsIcons}
                         {zones}

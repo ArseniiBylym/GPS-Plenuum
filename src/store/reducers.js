@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import Constants from '../lib/constants'
-import {carsList, eventsList, zonesList} from './temp_test_store'
+import {carsList, eventsList, zonesList, windowsList} from './temp_test_store'
 
 const isAuth = (state = {isAuthenticated: false, inProgress: false}, action) => {
     switch (action.type) {
@@ -108,12 +108,32 @@ const allZones = (state = {...zonesList}, action) => {
     }
 }
 
+const allWindows = (state = windowsList, action) => {
+    switch (action.type) {
+
+        case Constants.ActionTypes.OPEN_WINDOW:
+            return {
+                ...state,
+                [action.name]: {value: true}
+            }
+        case Constants.ActionTypes.CLOSE_WINDOW:
+            return {
+                ...state,
+                [action.name]: {value: false}
+            }
+
+        default: 
+            return state;
+    }
+}
+
 const reducers = combineReducers({
     isAuth,
     allCars,
     mainMap,
     allEvents,
-    allZones
+    allZones,
+    allWindows
 })
 
 export default reducers;

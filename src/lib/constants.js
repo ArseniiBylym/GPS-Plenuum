@@ -17,6 +17,9 @@ const ActionTypes = {
     SET_MAP: "SET_MAP",
     CLEAR_MAP: "CLEAR_MAP",
 
+    OPEN_WINDOW: "OPEN_WINDOW",
+    CLOSE_WINDOW: "CLOSE_WINDOW",
+
 
 }
 

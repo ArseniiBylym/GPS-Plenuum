@@ -5,6 +5,7 @@ import SideBar_Objects_Bottom from './Objects/SideBar_Objects_Bottom/SideBar_Obj
 import SideBar_Events_Top from './Events/SideBar_Events_Top/SideBar_Events_Top'
 import SideBar_Events_Bottom from './Events/SideBar_Events_Bottom/SideBar_Events_Bottom'
 import SideBar_Places from './Places/SideBar_Places'
+import History from './History/History'
 import { connect } from 'react-redux'
 
 class SideBar extends Component {
@@ -50,7 +51,9 @@ class SideBar extends Component {
                         <div className="tab-pane " id="SideBar__places" role="tabpanel" aria-labelledby="SideBar__places-tab">
                             <SideBar_Places />
                         </div>
-                        <div className="tab-pane " id="SideBar__history" role="tabpanel" aria-labelledby="SideBar__history-tab">history</div>
+                        <div className="tab-pane " id="SideBar__history" role="tabpanel" aria-labelledby="SideBar__history-tab">
+                            <History />
+                        </div>
                     </div>
             </div>
         )

@@ -1,52 +1,41 @@
 import React, { Component } from 'react';
 import './NavBar_LeftSide.scss';
+import { connect } from 'react-redux';
+import Constants from '../../../../../lib/constants'
 
 class NavBar_LeftSide extends Component {
     state = {
 
     }
+    links = [
+        {title: 'About', id: 'MainNavs__about', nameForHandler: 'about'},
+        {title: 'Help',  id: 'MainNavs__help',  nameForHandler: 'help'},
+        {title: 'Settings', id: 'MainNavs__settings', nameForHandler: 'settings'},
+        {title: 'Show point', id: 'MainNavs__showPoint', nameForHandler: 'points'},
+        {title: 'Address search', id: 'MainNavs__adressSearch', nameForHandler: 'search'},
+        {title: 'Reports', id: 'MainNavs__reports', nameForHandler: 'reports'},
+        {title: 'Tasks', id: 'MainNavs__tasks', nameForHandler: 'tasks'},
+        {title: 'RFID and iButton logbook', id: 'MainNavs__RFID', nameForHandler: 'rfid'},
+        {title: 'DTC (Diagnostic Trouble Codes)', id: 'MainNavs__DTC', nameForHandler: 'dtc'},
+        {title: 'Object control', id: 'MainNavs__objectControl', nameForHandler: 'object'},
+        {title: 'Image gallery', id: 'MainNavs__imageGallery', nameForHandler: 'gallery'},
+        {title: 'Chart', id: 'MainNavs__chart', nameForHandler: 'chart'},
+       
+    ]
 
     render() {
+
+        const linkList = this.links.map((item, i) => (
+            <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title={item.about} onClick={this.props.openWindow.bind(this, item.nameForHandler)}>
+                <a className="nav-link active" id={item.id} data-toggle="tab" href={`#${item.href}`} ></a>
+            </li>
+        ))
         return (
             <div className='NavBar__left'>
                 <div className="NavBar__left">
                     <ul className="nav nav-pills" id="MainNavs__mainTabs" role="tablist">
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="About">
-                            <a className="nav-link active" id="MainNavs__about" data-toggle="tab" href="#MainNavs__about" aria-controls="home" aria-selected="true"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Help">
-                            <a className="nav-link" id="MainNavs__help" data-toggle="tab" href="#MainNavs__help" aria-controls="profile" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Settings">
-                            <a className="nav-link" id="MainNavs__settings" data-toggle="tab" href="#MainNavs__settings" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Show point">
-                            <a className="nav-link" id="MainNavs__showPoint" data-toggle="tab" href="#MainNavs__showPoint" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Address search">
-                            <a className="nav-link" id="MainNavs__adressSearch" data-toggle="tab" href="#MainNavs__adressSearch" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Reports">
-                            <a className="nav-link" id="MainNavs__reports" data-toggle="tab" href="#MainNavs__reports" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Tasks">
-                            <a className="nav-link" id="MainNavs__tasks" data-toggle="tab" href="#MainNavs__tasks" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="RFID and iButton logbook">
-                            <a className="nav-link" id="MainNavs__RFID" data-toggle="tab" href="#MainNavs__RFID" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="DTC (Diagnostic Trouble Codes)">
-                            <a className="nav-link" id="MainNavs__DTC" data-toggle="tab" href="#MainNavs__DTC" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Object control">
-                            <a className="nav-link" id="MainNavs__objectControl" data-toggle="tab" href="#MainNavs__objectControl" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Image gallery">
-                            <a className="nav-link" id="MainNavs__imageGallery" data-toggle="tab" href="#MainNavs__imageGallery" aria-controls="contact" aria-selected="false"></a>
-                        </li>
-                        <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title="Chat">
-                            <a className="nav-link" id="MainNavs__chat" data-toggle="tab" href="#MainNavs__chat" aria-controls="contact" aria-selected="false"></a>
-                        </li>
+                        {linkList}
+                        
                     </ul>
                 </div>
             </div>
@@ -54,4 +43,10 @@ class NavBar_LeftSide extends Component {
     }
 }
 
-export default NavBar_LeftSide
+const mapDispatchToPops = dispatch => {
+    return {
+        openWindow: (name) => {dispatch({type: Constants.ActionTypes.OPEN_WINDOW, name: name})}
+    }
+}
+
+export default connect(null, mapDispatchToPops)(NavBar_LeftSide)

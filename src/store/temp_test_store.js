@@ -160,3 +160,31 @@ export const zonesList = {
         }
     ]
 }
+
+export const windowsList = {
+        // about: {name: 'about', value: true},
+        // help: {name: 'help', value: true},
+        // settings: {name: 'settings', value: true},
+        // points: {name: 'points', value: false},
+        // search: {name: 'search', value: false},
+        // reports: {name: 'reports', value: false},
+        // tasks: {name: 'tasks', value: false},
+        // rfid: {name: 'rfid', value: false},
+        // dtc: {name: 'dtc', value: false},
+        // object: {name: 'object', value: false},
+        // gallery: {name: 'gallery', value: false},
+        // chart: {name: 'chart', value: false},
+
+        about: {value: false},
+        help: {value: false},
+        settings: {value: false},
+        points: {value: false},
+        search: {value: false},
+        reports: {value: false},
+        tasks: {value: false},
+        rfid: {value: false},
+        dtc: {value: false},
+        object: {value: false},
+        gallery: {value: false},
+        chart: {value: false},
+}
