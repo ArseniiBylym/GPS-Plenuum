@@ -60,7 +60,8 @@
         width: 800px;
         height: 400px;
         left: calc(50% - 400px);
-        top: calc(50% - 200px)
+        top: calc(50% - 200px);
+        display: none;
     }
     
     
@@ -70,7 +71,8 @@
         width: 300px;
         height: 200px;
         left: calc(50% - 150px);
-        top: calc(50% - 100px)
+        top: calc(50% - 100px);
+        display: none;
     }
     .search{
         z-index: 1000;
@@ -78,7 +80,8 @@
         width: 300px;
         height: 200px;
         left: calc(50% - 150px);
-        top: calc(50% - 100px)
+        top: calc(50% - 100px);
+        display: none;
     }
     .card-header{
         cursor: move;

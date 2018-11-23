@@ -37,6 +37,10 @@ class Windows extends Component {
         chart: Chart  
     }
 
+    hideModal = (id) => {
+        document.getElementById(id).style.display = 'none'
+    }
+
     render() {
         const windowsList = [];
 
@@ -46,7 +50,8 @@ class Windows extends Component {
                 if(this.props.windows[item].value === true) {
                     console.log('case 2')
                     windowsList.push(this.windowsObject[item])
-                    let component = withCloseHandler(this.windowsObject[item], {name: item, click: this.props.closeModal})
+                    // let component = withCloseHandler(this.windowsObject[item], {name: item, id: `__modal-${item}`, click: this.props.closeModal})
+                    let component = withCloseHandler(this.windowsObject[item], {name: item, id: `__modal-${item}`, click: this.hideModal})
                     windowsList.push(component)
                 }
             }
