@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-// import { withCloseHandler } from '../../../Helpers/HOC'
+import { withCloseHandler } from '../../../Helpers/HOC'
 
 import About from './About/About'
 import Help from './Help/Help'
 import Settings from './Settings/Settings'
-import Point from './Point/Point'
+import _Point from './Point/Point'
 import Search from './Search/Search'
 import Reports from './Reports/Reports'
 import Tasks from './Tasks/Tasks'
@@ -22,37 +22,32 @@ class Windows extends Component {
         
     }
 
-    closeCurrentWindow = (name) => {
-       this.props.closeModal(name)
-    }
-
     windowsObject = {
-        about: <About name='about' click={this.closeCurrentWindow}/>,
-        help: <Help name='help' click={this.closeCurrentWindow}/>,
-        settings: <Settings name='settings' click={this.closeCurrentWindow}/>,
-        points: <Point name='points' click={this.closeCurrentWindow}/>,
-        search: <Search name='search' click={this.closeCurrentWindow}/>,
-        reports: <Reports name='reports' click={this.closeCurrentWindow}/>,
-        tasks: <Tasks name='tasks' click={this.closeCurrentWindow}/>,
-        rfid: <RFID name='rfid' click={this.closeCurrentWindow}/>,
-        dtc: <DTC name='dtc' click={this.closeCurrentWindow}/>,
-        object: <_Object name='object' click={this.closeCurrentWindow}/>,
-        gallery: <Gallery name='gallery' click={this.closeCurrentWindow}/>,
-        chart: <Chart name='chart' click={this.closeCurrentWindow}/>
-    }
-
-    propsList = {
-        closeHandler: this.closeCurrentWindow
+        about: About,
+        help: Help,
+        settings: Settings,
+        points: _Point,
+        search: Search,
+        reports: Reports,
+        tasks: Tasks,
+        rfid: RFID,
+        dtc: DTC,
+        object: _Object,
+        gallery: Gallery,
+        chart: Chart  
     }
 
     render() {
-
         const windowsList = [];
 
         if(this.props.windows.about) {
             for(let item in this.props.windows) {
+                console.log('case 1')
                 if(this.props.windows[item].value === true) {
+                    console.log('case 2')
                     windowsList.push(this.windowsObject[item])
+                    let component = withCloseHandler(this.windowsObject[item], {name: item, click: this.props.closeModal})
+                    windowsList.push(component)
                 }
             }
         }

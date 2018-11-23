@@ -18,7 +18,8 @@ import rootSaga from './store/sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
-let store = createStore(reducers, compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(sagaMiddleware)));
+// let store = createStore(reducers, compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(sagaMiddleware)));
+let store = createStore(reducers, compose( applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
