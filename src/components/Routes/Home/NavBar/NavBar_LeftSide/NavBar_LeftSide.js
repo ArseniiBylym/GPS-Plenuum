@@ -26,7 +26,7 @@ class NavBar_LeftSide extends Component {
     render() {
 
         const linkList = this.links.map((item, i) => (
-            <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title={item.about} onClick={this.props.openWindow.bind(this, item.nameForHandler)}>
+            <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title={item.title} onClick={this.props.openWindow.bind(this, item.nameForHandler)}>
                 <a className="nav-link active" id={item.id} data-toggle="tab" href={`#${item.href}`} ></a>
             </li>
         ))

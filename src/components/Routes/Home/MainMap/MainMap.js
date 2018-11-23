@@ -42,10 +42,6 @@ class MainMap extends Component {
             const visibleZones = this.props.zonesList.filter((item, i) => {
                 return item.isVisible === true
             })
-            // zones = visibleZones.map((item, i) => {
-            //     console.log(item)
-            //     return <Polygon color={item.color} positions={item.coords} />
-            // })
             zones = <ZoneCreator items={visibleZones} />
         }
 
@@ -83,7 +79,6 @@ class MainMap extends Component {
                         </BaseLayer>
                         {carsIcons}
                         {zones}
-                        {/* <Polygon color="purple" positions={[[51.515, -0.09], [51.52, -0.1], [51.52, -0.12]]} /> */}
                     </LayersControl>
                 </Map>
         )

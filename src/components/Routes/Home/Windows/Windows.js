@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import './Windows.scss';
 import { connect } from 'react-redux';
 
 // import { withCloseHandler } from '../../../Helpers/HOC'
@@ -40,19 +39,6 @@ class Windows extends Component {
         object: <_Object name='object' click={this.closeCurrentWindow}/>,
         gallery: <Gallery name='gallery' click={this.closeCurrentWindow}/>,
         chart: <Chart name='chart' click={this.closeCurrentWindow}/>
-
-        // about: About,
-        // help: Help,
-        // settings: Settings,
-        // points: _Point,
-        // search: Search,
-        // reports: Reports,
-        // tasks: Tasks,
-        // rfid: RFID,
-        // dtc: DTC,
-        // object: _Object,
-        // gallery: Gallery,
-        // chart: Chart
     }
 
     propsList = {
@@ -67,16 +53,13 @@ class Windows extends Component {
             for(let item in this.props.windows) {
                 if(this.props.windows[item].value === true) {
                     windowsList.push(this.windowsObject[item])
-                    // windowsList.push(withCloseHandler(this.windowsObject[item], {...this.propsList}))
                 }
             }
         }
         return(
-            // <div className='Windows'>
             <Fragment>
                 {windowsList}
             </Fragment>
-            // </div>
         )
     }
 }

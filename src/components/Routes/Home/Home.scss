@@ -17,4 +17,73 @@
         grid-column: 4 / -1;
         grid-row: 2 / -1;
     }
+
+    .About{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(0,0,0,.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        .About-conteiner{
+            width: 50%;
+            height: 200px;
+    
+            .About-container__header{
+                width: 100%;
+                height: 80px;
+                background-color: #3180cd;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+    .Settings,
+    .Reports,
+    .Tasks,
+    .RFID,
+    .DTC,
+    .Object,
+    .Gallery,
+    .Chart{
+        z-index: 1000;
+        position: absolute;
+        width: 800px;
+        height: 400px;
+        left: calc(50% - 400px);
+        top: calc(50% - 200px)
+    }
+    .Point{
+        z-index: 1000;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        left: calc(50% - 150px);
+        top: calc(50% - 100px)
+    }
+    .Search{
+        z-index: 1000;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        left: calc(50% - 150px);
+        top: calc(50% - 100px)
+    }
+    .card-header{
+        cursor: move;
+        background-color: #17a2b8;
+        color: white;
+    }
+    .close{
+        color: white;
+        opacity: 1;
+    }
+
 }

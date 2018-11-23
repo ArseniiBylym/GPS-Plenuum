@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Draggable from 'react-draggable';
+import { Card, CardBody, CardHeader, CardText, CardTitle, Button } from 'reactstrap';
 
 class _Object extends Component {
     state = {
@@ -7,9 +9,15 @@ class _Object extends Component {
 
     render() {
         return(
-            <div className='_Object'>
-                Object
-            </div>
+            <Draggable bounds="parent" >
+            <Card className='Object'>
+                <CardHeader color="primary">Object control<Button close onClick={this.props.click.bind(this, this.props.name)} /></CardHeader>
+                <CardBody>
+                    <CardTitle>Special Title Treatment</CardTitle>
+                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                </CardBody>
+            </Card>
+        </Draggable>
         )
     }
 }
