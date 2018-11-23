@@ -24,16 +24,16 @@ class NavBar_LeftSide extends Component {
     ]
 
     showModal = (id) => {
-        document.getElementById(id).style.display = 'block'
+        const anotherWindows = [...document.getElementsByClassName('react-draggable')];
+        anotherWindows.forEach((item, i) => {
+            item.style.zIndex = '1000';
+        })
+        const elem = document.getElementById(id);
+        elem.style.display = 'block'
+        elem.style.zIndex = '1050';
     }
 
     render() {
-
-        // const linkList = this.links.map((item, i) => (
-        //     <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title={item.title} onClick={this.props.openWindow.bind(this, item.nameForHandler)}>
-        //         <a className="nav-link active" id={item.id} data-toggle="tab" href={`#${item.href}`} ></a>
-        //     </li>s
-        // ))
         const linkList = this.links.map((item, i) => (
             <li className="nav-item" data-toggle="tooltip" data-placement="bottom" title={item.title} onClick={this.showModal.bind(this, `__modal-${item.nameForHandler}`)}>
                 <a className="nav-link active" id={item.id} data-toggle="tab" href={`#${item.href}`} ></a>
